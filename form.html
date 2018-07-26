@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #8B4513;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        #content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: beige;
+            padding: 15px;
+            border-radius: 10px;
+            color: #8B4513;
+        }
+        form {
+            text-align: left;
+            padding: 10px;
+            
+        }
+        .field-container, fieldset {
+            padding: 15px;
+            margin: 0 auto;
+        }
+   
+        .field-container input, textarea, select {
+            width: 50%;
+            margin-left: 10px;
+        }
+       
+
+        .field-container label, .text-area label{
+            width: 30%;
+            display: inline-block;
+            text-align: right;
+            
+        }
+        .check-container input {
+            padding-bottom: 10px;
+            margin-left: 10px;
+        }
+        legend {
+            float: left;
+            width: 30%;
+            text-align: right;
+        }
+       
+        .choice-container {
+            overflow: hidden;
+        }
+        fieldset .check-container:last-child {
+            padding-bottom: 0px;
+        }
+        
+       
+        input, select, textarea, button {
+            font-size: .9em;
+            margin-top: 10px;
+        } 
+        input:invalid {
+            border: 2px dashed red;
+        }
+
+        input:valid {
+            border: 2px solid black;
+        }
+        fieldset {
+            border: 0px;
+        }
+        .text-area {
+            position: relative;
+        }
+        .text-area label {
+            vertical-align: top;
+        }
+        button {
+            width: 300px;
+            margin: 0 auto;
+            display: block;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: #8B4513;
+            color: #fff;
+        }
+        @media(max-width: 570px) {
+            .field-container input, textarea, select {
+                width: 100%;
+                margin-left: 0px;
+
+            }
+            .field-container label, .text-area label{
+                width: 100%;
+                display: block;
+                text-align: left;
+            }
+            .check-container input {
+                padding-bottom: 10px;
+                margin-left: 0px;
+            }
+            legend {
+                display: block;
+                float: none;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main role="main">
+            <h1 id="title">Cookie Survey</h1>
+        <section id="content-container">
+            <p id="description">What's your favorite type?</p>
+            <form id="survey-form">
+                <div class="field-container">
+                    <label id="name=label" for="name">Name</label>
+                    <input id="name" name="name" required placeholder="Enter Your Name">
+                </div>
+                <div class="field-container">
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter Your Email Address">
+                </div>
+                <div class="field-container">
+                    <label id="number-label" for="number">Number of cookies you eat per day</label>
+                    <input type="number" id="number" name="number" min="1" max="50">
+                </div>
+                <div class="field-container">
+                    <label id="dropdown-label">When do you prefer to eat your cookies?</label>
+                    <select id="dropdown">
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Night">Night</option>
+                    </select>
+                </div>
+                <fieldset>
+                    <legend>Cookie dough or oatmeal?</legend>
+                    <div class="choice-container">
+                    <div class="check-container">
+                        <input type="radio" id="cookie-dough" name="dough-choice"/>
+                        <label for="Cookie Dough">Cookie Dough</label>
+                    </div>
+                    <div class="check-container">
+                        <input type="radio" id="outmeal" name="dough-choice"/>
+                        <label for="Oatmeal">Oatmeal</label>
+                    </div>
+                </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Favorite Toppings</legend>
+                    <div class="choice-container">
+                    <div class="check-container">
+                      <input type="checkbox" id="chocolate-chip" name="chocolate-chip" value="Chocolate Chip">
+                      <label for="chocolate-chip">Chocolate Chip</label>
+                    </div>
+                    <div class="check-container">
+                      <input type="checkbox" id="raisin" name="raisin" value="raisin">
+                      <label for="raisin">Raisin</label>
+                    </div>
+                    <div class="check-container">
+                        <input type="checkbox" id="sugar" name="sugar" value="sugar">
+                        <label for="sugar">Sugar</label>
+                    </div>
+                    <div class="check-container">
+                        <input type="checkbox" id="macadamia" name="macadamia" value="macadamia">
+                        <label for="macadamia">Macadamia</label>
+                    </div>
+                    </div>
+                  </fieldset>
+                  <div class="field-container text-area">
+                      <label for="comments">Additional Comments</label>
+                      <textarea rows="3" cols="33" maxlength="200" id="comments" name="comments"></textarea>
+                  </div>
+                  <div class="field-container submit">
+                      <button type="submit">Submit</button>
+                  </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
